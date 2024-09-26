@@ -7,6 +7,11 @@
   packages = [
     pkgs.dart
   ];
+ # Enable services like PostgreSQL and Docker
+  services = {
+    docker.enable = true;
+    postgres.enable = true;
+  };
   # Sets environment variables in the workspace
   env = { };
   idx = {
