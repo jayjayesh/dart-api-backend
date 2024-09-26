@@ -7,7 +7,8 @@ import 'package:shelf_router/shelf_router.dart';
 // Configure routes.
 final _router = Router()
   ..get('/', _rootHandler)
-  ..get('/echo/<message>', _echoHandler);
+  ..get('/echo/<message>', _echoHandler)
+  ..get('/hello/<name>', _helloHandler);
 
 Response _rootHandler(Request req) {
   return Response.ok('Hello, World!\n');
@@ -16,6 +17,19 @@ Response _rootHandler(Request req) {
 Response _echoHandler(Request request) {
   final message = request.params['message'];
   return Response.ok('$message\n');
+}
+
+Response _helloHandler(Request request) {
+  // Request parameters
+  final name = request.params['name'];
+
+  // Validators
+  if(name == null || name.isEmpty) {
+    return Response.badRequest(body: 'name is required');
+  }
+
+  // Business logic
+  return Response.ok('hello $name \nGood to hear from you.');
 }
 
 void main(List<String> args) async {
