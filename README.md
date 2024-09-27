@@ -55,3 +55,12 @@ If you have updated api or added new api then docker container need to update wi
 $ docker ps
 $ docker stop <container_name_or_id>
 ```
+
+## Deploy API services
+-- if you want to deploy this newly created APIs to globly, you can use docker_image to upload on google cloud 
+
+OR
+
+-- you could use [globe_cli](https://pub.dev/packages/globe_cli)
+
+-- Note : globe login is not working on project IDX at the moment I've filed [an issue here](https://github.com/invertase/globe/issues/104) keep track it.
