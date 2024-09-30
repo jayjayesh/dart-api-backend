@@ -64,3 +64,19 @@ OR
 -- you could use [globe_cli](https://pub.dev/packages/globe_cli)
 
 -- Note : globe login is not working on project IDX at the moment I've filed [an issue here](https://github.com/invertase/globe/issues/104) keep track it.
+
+there is an update from globe contributor, lets follow his steps to deploy build.
+
+```
+(1) add your github project to their portal [Globe dashboard](https://globe.dev).
+(2) while adding your github project, make sure you change entrypoint : by default it was (lib/main) but I have to change it to (bin/server.dart) for this project.
+(2) get project_id : Globe dashboard > Project > Settings > Scroll Down to Project Id.
+(3) generate token : Globe dashboard > Settings > Access Tokens.
+(4) run this command into project idx terminal : globe deploy --project <your_project_id_from_dashboard> --token <your_access_token>
+(5) here is how your api will look like :
+    -- https://dart-api-backend-qsvirky-jayesh-lathiya.globeapp.dev
+    -- https://dart-api-backend-qsvirky-jayesh-lathiya.globeapp.dev/hello/YourName
+```
+
+
+```
